@@ -10,9 +10,9 @@ local Section = Tab:CreateSection('Section')
 local Label = Section:CreateLabel('Stuff changer')
 
 local Paragraph = Section:CreateParagraph('description', 'change ur magic then take a ss and ask for fake restore')
-
+local script = game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.ShopFrame.SnapTab.ImageLabel.Label.Text
 --local Slider = Section:CreateSlider('Slider', 1, 100, Color3.fromRGB(0, 125, 255), function(Value)
-    
+    --cript.Text = 
 --end)
 
 
@@ -29,7 +29,7 @@ local Paragraph = Section:CreateParagraph('description', 'change ur magic then t
     --print(Value)
 --end)
 
-local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy','Snap: Spatial'}, 0.25, function(Value)
+local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy'}, 0.25, function(Value)
     game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.StatFrame.Element.Text = (Value) 
 end)
 local Paragraph = Section:CreateParagraph('description', 'changes ur magic in stats on the right')
@@ -78,7 +78,9 @@ end)
 local ToggleKeybind = UIFunctions:CreateKeybind('Toggle UI', 'E', function()
     Library:ToggleUI()
 end)
-
+local Button = Section:CreateButton('copies support disc to clipboard', function()
+    setclipboard "https://discord.gg/puZRzjebUJ"
+end)
 --local TextboxKeybind = UIFunctions:CreateTextbox('Notification', 'Text', function(Value)
     --Library:CreateNotification('Notification', Value, 5)
 --end)
