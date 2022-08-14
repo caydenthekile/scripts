@@ -1,4 +1,4 @@
---https://v3rmillion.net/showthread.php?tid=1183484
+---https://v3rmillion.net/showthread.php?tid=1183484
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Mapple7777/Visual-UI-Library/main/Source.lua'))()
 
 local Window = Library:CreateWindow('no name yet','era of althea')
@@ -29,7 +29,7 @@ local script = game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.ShopFrame
     --print(Value)
 --end)
 
-local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy'}, 0.25, function(Value)
+local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy','Snap: Spatial','Snap: Water','Snap: Light'}, 0.25, function(Value)
     game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.StatFrame.Element.Text = (Value) 
 end)
 local Paragraph = Section:CreateParagraph('description', 'changes ur magic in stats on the right')
@@ -37,7 +37,7 @@ local Dropdown = Section:CreateDropdown('Spin setter',{'Spins: 15', 'Spins: 89',
     game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.ShopFrame.SnapTab.Spins.Text = (Value)
 end)
 local Paragraph = Section:CreateParagraph('description', 'changes how many spins it says you have')
-local Dropdown = Section:CreateDropdown('Magic setter 2',{'Anti-Magic', 'Time', 'Gravity', 'Necromancy'}, 0.25, function(Value)
+local Dropdown = Section:CreateDropdown('Magic setter 2',{'Anti-Magic', 'Time', 'Gravity', 'Necromancy','Spatial','Water','Light'}, 0.25, function(Value)
     game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.ShopFrame.SnapTab.ImageLabel.Label.Text = (Value) 
 end)
 local Paragraph = Section:CreateParagraph('description', 'changes what magic is where you spin it')
