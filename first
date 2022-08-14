@@ -1,0 +1,84 @@
+--https://v3rmillion.net/showthread.php?tid=1183484
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Mapple7777/Visual-UI-Library/main/Source.lua'))()
+
+local Window = Library:CreateWindow('no name yet','era of althea')
+
+local Tab = Window:CreateTab('Tab', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection('Section')
+
+local Label = Section:CreateLabel('Stuff changer')
+
+local Paragraph = Section:CreateParagraph('description', 'change ur magic then take a ss and ask for fake restore')
+
+--local Slider = Section:CreateSlider('Slider', 1, 100, Color3.fromRGB(0, 125, 255), function(Value)
+    
+--end)
+
+
+
+--local Textbox = Section:CreateTextbox('Textbox', 'Input', function(Value)
+    --print(Value)
+--end)
+
+--local Keybind = Section:CreateKeybind('Keybind', 'F', function()
+    --print('Key Pressed')
+--end)
+
+--local Toggle = Section:CreateToggle('Toggle', true, Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+    --print(Value)
+--end)
+
+local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy'}, 0.25, function(Value)
+    game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.StatFrame.Element.Text = (Value) 
+end)
+local Paragraph = Section:CreateParagraph('description', 'changes ur magic in stats on the right')
+local Dropdown = Section:CreateDropdown('Spin setter',{'Spins: 15', 'Spins: 89','Spins: 19'}, 0.25, function(Value)
+    game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.ShopFrame.SnapTab.Spins.Text = (Value)
+end)
+local Paragraph = Section:CreateParagraph('description', 'changes how many spins it says you have')
+local Dropdown = Section:CreateDropdown('Magic setter 2',{'Anti-Magic', 'Time', 'Gravity', 'Necromancy'}, 0.25, function(Value)
+    game:GetService("Players").bruhneedalt1.PlayerGui.MenuV2.ShopFrame.SnapTab.ImageLabel.Label.Text = (Value) 
+end)
+local Paragraph = Section:CreateParagraph('description', 'changes what magic is where you spin it')
+--local Button = Section:CreateButton('sets spins to slider number', function()
+    
+--end)
+
+--local Colorpicker = Section:CreateColorpicker('Colorpicker', 0.25, function(Value)
+    --print(Value)
+--end)
+    
+--local UpdateSection = Tab:CreateSection('Update Functions')
+
+--local LabelBox = UpdateSection:CreateTextbox('Update Label', 'New Text', function(Value)
+    --Label:UpdateLabel(Value)
+--end)
+    
+--local ParagraphBox = UpdateSection:CreateTextbox('Update Paragraph', 'New Text', function(Value)
+    --Paragraph:UpdateParagraph('Paragraph', Value)
+--end)
+    
+--local UpdateDropdown1 = UpdateSection:CreateButton('Update Dropdown 1', function()
+    --Dropdown:UpdateDropdown({'1', '2', '3'})
+--end)
+    
+--local UpdateDropdown2 = UpdateSection:CreateButton('Update Dropdown 2', function()
+    --Dropdown:UpdateDropdown({'1', '2', '3', '4', '5', '6'})
+--end)
+
+local LibraryFunctions = Window:CreateTab('Library Functions', false, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+
+local UIFunctions = LibraryFunctions:CreateSection('UI Functions')
+
+local DestroyButton = UIFunctions:CreateButton('Destroy UI', function()
+    Library:DestroyUI()
+end)
+
+local ToggleKeybind = UIFunctions:CreateKeybind('Toggle UI', 'E', function()
+    Library:ToggleUI()
+end)
+
+--local TextboxKeybind = UIFunctions:CreateTextbox('Notification', 'Text', function(Value)
+    --Library:CreateNotification('Notification', Value, 5)
+--end)
