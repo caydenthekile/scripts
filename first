@@ -29,7 +29,7 @@ local Paragraph = Section:CreateParagraph('description', 'change ur magic then t
     --print(Value)
 --end)
 
-local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy'}, 0.25, function(Value)
+local Dropdown = Section:CreateDropdown('Magic setter',{'Snap: Anti-Magic', 'Snap: Time', 'Snap: Gravity', 'Snap: Necromancy','Snap: Spatial'}, 0.25, function(Value)
     game:GetService("Players").LocalPlayer.PlayerGui.MenuV2.StatFrame.Element.Text = (Value) 
 end)
 local Paragraph = Section:CreateParagraph('description', 'changes ur magic in stats on the right')
