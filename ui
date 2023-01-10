@@ -718,7 +718,7 @@ function SolarisLib:New(Config)
     end)
 
     function SolarisLib:LoadCfg(cfg)
-        local content = http:JSONDecode(Config.FolderToSave .. "/configs/" .. cfg)
+        local content = http:JSONDecode(Config.FolderToSave .. "/configs/",cfg)
         table.foreach(content, function(a,b)
             if SolarisLib.Flags[a] then
                 spawn(function() SolarisLib.Flags[a]:Set(b) end)
