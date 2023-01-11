@@ -737,7 +737,7 @@ function SolarisLib:New(Config)
         for i,v in pairs(SolarisLib.Flags) do
             content[i] = v.Value
         end
-        writefile(Config.FolderToSave .. "/configs/" .. name .. ".txt", tostring(http:JSONEncode(content)))
+        writefile(Config.FolderToSave .. "/configs/" .. name .. ".json", tostring(http:JSONEncode(content)))
     end
     
 
