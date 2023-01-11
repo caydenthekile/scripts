@@ -717,8 +717,8 @@ function SolarisLib:New(Config)
         end
     end)
 
-    function SolarisLib:LoadCfg(cfg)
-        local file = Config.FolderToSave .. "/configs/".. cfg .. '.json'
+    function SolarisLib:LoadCfg(name)
+        local file = Config.FolderToSave .. "/configs/" .. name .. ".json"
         local success, decoded = pcall(http.JSONDecode, http, readfile(file))
 		if not success then return false, 'decode error' end
         table.foreach(decoded.objects, function(a,b)
