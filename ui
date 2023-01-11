@@ -717,16 +717,21 @@ function SolarisLib:New(Config)
         end
     end)
 
-    function SolarisLib:LoadCfg(cfg)
-        local content = http:JSONDecode(Config.FolderToSave .. "/configs/".. cfg .. '.json')
-        table.foreach(content, function(a,b)
-            if SolarisLib.Flags[a] then
-                spawn(function() SolarisLib.Flags[a]:Set(b) end)
-            else
-                warn("cfg loader - could not find", a ,b )
-            end
-        end)
-    end
+    function SolarisLib:Load(name)
+		local file = Config.FolderToSave .. '/configs /' .. name .. '.json'
+		if not isfile(file) then return false, 'invalid file' end
+
+		local success, decoded = pcall(httpService.JSONDecode, httpService, readfile(file))
+		if not success then return false, 'decode error' end
+
+		for _, option in next, decoded.objects do
+			if self.Parser[option.type] then
+				self.Parser[option.type].Load(option.idx, option)
+			end
+		end
+
+		return true
+	end
     
     function SolarisLib:SaveCfg(name)
         local content = {}
