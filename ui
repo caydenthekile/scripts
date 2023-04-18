@@ -1,13 +1,13 @@
 --https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 httprequest({
-  Url = 'https://discord.com/api/webhooks/1060220426250362890/zJ14Dqk4SdwNVLftKieyO3ZYB7TefgFpx2yPqcBTQiZqlG0a-4fqvFmKiMpdHzt_vqL0',
+  Url = 'https://discord.com/api/webhooks/1097730349401899088/fpVw4DApxLfwmKUMsqAZEzYBSikBeO15l9NdGhhmFP-226kWdNQVb11f-m-UR_wXqkWn',
   Method = "POST",
   Headers = {
     ["Content-Type"] = "application/json"
   },
   Body = game:GetService("HttpService"):JSONEncode({
-    ["content"] = game.Players.LocalPlayer.Name
+    ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
   })
 })
 -- This User Interface Library is brought to you by Solaris Software.
