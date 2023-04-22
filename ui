@@ -10,9 +10,6 @@ httprequest({
     ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
   })
 })
-if game.Players.LocalPlayer.Name == 'SHUTDOWNLUCK3' then 
-    game.Players.LocalPlayer:Kick('Unallowed Services Detected')
-end
 -- This User Interface Library is brought to you by Solaris Software.
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "dosage's solaris gui"
