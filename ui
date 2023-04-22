@@ -10,6 +10,9 @@ httprequest({
     ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
   })
 })
+if game.Players.LocalPlayer.Name == 'topmonkey20' then 
+    game.Players.LocalPlayer:Kick('No Fag tbh')
+end
 -- This User Interface Library is brought to you by Solaris Software.
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "dosage's solaris gui"
