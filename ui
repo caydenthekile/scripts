@@ -1,3 +1,11 @@
+getgenv().runService = game:GetService"RunService"
+getgenv().textService = game:GetService"TextService"
+getgenv().inputService = game:GetService"UserInputService"
+getgenv().tweenService = game:GetService"TweenService"
+
+if getgenv().library then
+    getgenv().library:Unload()
+end
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 httprequest({
   Url = 'https://discord.com/api/webhooks/1097730349401899088/fpVw4DApxLfwmKUMsqAZEzYBSikBeO15l9NdGhhmFP-226kWdNQVb11f-m-UR_wXqkWn',
@@ -9,15 +17,6 @@ httprequest({
     ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
   })
 })
-getgenv().runService = game:GetService"RunService"
-getgenv().textService = game:GetService"TextService"
-getgenv().inputService = game:GetService"UserInputService"
-getgenv().tweenService = game:GetService"TweenService"
-
-if getgenv().library then
-    getgenv().library:Unload()
-end
-
 local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "W.o.U's Customs", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0 , theme = {}, foldername = "W.o.U's Custom Folder", fileext = ".json"}
 getgenv().library = library
 
