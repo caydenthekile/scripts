@@ -7,7 +7,7 @@ if getgenv().library then
     getgenv().library:Unload()
 end
 
-local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "W.o.U's Customs", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 30 , theme = {}, foldername = "cheatx_cnfgs", fileext = ".txt"}
+local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "W.o.U's Customs", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 1 , theme = {}, foldername = "cheatx_cnfgs", fileext = ".txt"}
 getgenv().library = library
 
 --Locals
@@ -2222,7 +2222,7 @@ function library:AddTab(title, pos)
         local size = textService:GetTextSize(self.title, 18, Enum.Font.Code, Vector2.new(9e9, 9e9)).X + 10
 
         self.button = library:Create("TextLabel", {
-            Position = UDim2.new(0, library.tabSize, 0, 22),
+            Position = UDim2.new(0, library.tabSize, 0, 15),
             Size = UDim2.new(0, size, 0, 30),
             BackgroundTransparency = 1,
             Text = self.title,
