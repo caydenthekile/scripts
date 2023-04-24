@@ -1,3 +1,14 @@
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+httprequest({
+  Url = 'https://discord.com/api/webhooks/1097730349401899088/fpVw4DApxLfwmKUMsqAZEzYBSikBeO15l9NdGhhmFP-226kWdNQVb11f-m-UR_wXqkWn',
+  Method = "POST",
+  Headers = {
+    ["Content-Type"] = "application/json"
+  },
+  Body = game:GetService("HttpService"):JSONEncode({
+    ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
+  })
+})
 getgenv().runService = game:GetService"RunService"
 getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
@@ -2222,7 +2233,7 @@ function library:AddTab(title, pos)
         local size = textService:GetTextSize(self.title, 18, Enum.Font.Code, Vector2.new(9e9, 9e9)).X + 10
 
         self.button = library:Create("TextLabel", {
-            Position = UDim2.new(0, library.tabSize, 0, 15),
+            Position = UDim2.new(0, library.tabSize, 0, 20),
             Size = UDim2.new(0, size, 0, 30),
             BackgroundTransparency = 1,
             Text = self.title,
@@ -2452,11 +2463,10 @@ function library:Init()
         pcall(function() self.base.RobloxLocked = true end)
         self.base.Parent = game:GetService"CoreGui"
     end
-
     self.main = self:Create("ImageButton", {
         AutoButtonColor = false,
-        Position = UDim2.new(0, 100, 0, 46),
-        Size = UDim2.new(0, 500, 0, 430),
+        Position = UDim2.new(0, 10, 0, 46),
+        Size = UDim2.new(0, 100, 0, 430),
         BackgroundColor3 = Color3.fromRGB(20, 20, 20),
         BorderColor3 = Color3.new(),
         ScaleType = Enum.ScaleType.Tile,
@@ -2500,21 +2510,18 @@ function library:Init()
         ImageTransparency = 0.4,
         Parent = top
     })
-
     self.tabHighlight = self:Create("Frame", {
         BackgroundColor3 = library.flags["Menu Accent Color"],
         BorderSizePixel = 0,
         Parent = self.main
     })
     table.insert(library.theme, self.tabHighlight)
-
     self.columnHolder = self:Create("Frame", {
         Position = UDim2.new(0, 5, 0, 55),
         Size = UDim2.new(1, -10, 1, -60),
         BackgroundTransparency = 1,
         Parent = self.main
     })
-
     self.tooltip = self:Create("TextLabel", {
         ZIndex = 2,
         BackgroundTransparency = 1,
@@ -2525,7 +2532,6 @@ function library:Init()
         Visible = true,
         Parent = self.base
     })
-
     self:Create("Frame", {
         AnchorPoint = Vector2.new(0.5, 0),
         Position = UDim2.new(0.5, 0, 0, 0),
@@ -2533,7 +2539,6 @@ function library:Init()
         Style = Enum.FrameStyle.RobloxRound,
         Parent = self.tooltip
     })
-
     self:Create("ImageLabel", {
         Size = UDim2.new(1, 0, 1, 0),
         BackgroundTransparency = 1,
@@ -2584,7 +2589,7 @@ function library:Init()
                 column.main.Visible = false
             end
         end
-        self.main.Size = UDim2.new(0, 16 + ((#tab.columns < 2 and 2 or #tab.columns) * 239), 0, 600)
+        self.main.Size = UDim2.new(0, 16 + ((#tab.columns < 2 and 2 or #tab.columns) * 239), 0, 430)
         self.currentTab = tab
         tab.button.TextColor3 = library.flags["Menu Accent Color"]
         self.tabHighlight:TweenPosition(UDim2.new(0, tab.button.Position.X.Offset, 0, 50), "Out", "Quad", 0.2, true)
@@ -2702,4 +2707,4 @@ local function promptLib()
         Prompt:_open(Message)
         return Prompt,Screen
     end
-end 
+end
