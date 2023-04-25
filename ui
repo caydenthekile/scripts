@@ -17,7 +17,7 @@ httprequest({
     ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
   })
 })
-local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "W.o.U's Customs", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0 , theme = {}, foldername = "W.o.U's Custom Folder", fileext = ".json"}
+local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "W.o.U's Customs", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0 , theme = {}, foldername = "W.o.U's Custom Folder//"..'UI Configs", fileext = ".json"}
 getgenv().library = library
 
 --Locals
