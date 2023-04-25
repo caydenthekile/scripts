@@ -1,4 +1,4 @@
---loadstring((game:HttpGet("https://raw.githubusercontent.com/caydenthekile/scripts/main/ui")))()
+--loadstring((game:HttpGet("https://raw.githubusercontent.com/caydenthekile/scripts/main/favui")))()
 getgenv().runService = game:GetService"RunService"
 getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
@@ -1072,6 +1072,7 @@ library.createList = function(option, parent)
             if input.UserInputType.Name == "MouseButton1" then
                 if self.multiselect then
                     self.value[value] = not self.value[value]
+                    
                     self:SetValue(self.value)
                 else
                     self:SetValue(value)
@@ -1972,8 +1973,8 @@ function library:AddTab(title, pos)
                 option.multiselect = typeof(option.multiselect) == "boolean" and option.multiselect or false
                 --option.groupbox = (not option.multiselect) and (typeof(option.groupbox) == "boolean" and option.groupbox or false)
                 option.value = option.multiselect and (typeof(option.value) == "table" and option.value or {}) or tostring(option.value or option.values[1] or "")
-                if option.multiselect then
-                    for i,v in next, option.values do
+                if option.multiselect then 
+                        for i,v in next, option.values do
                         option.value[v] = false
                     end
                 end
