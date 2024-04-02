@@ -2592,7 +2592,7 @@ function library:Init()
         self.currentTab = tab
         tab.button.TextColor3 = library.flags["Menu Accent Color"]
         
-        self.tabHighlight:TweenSize(UDim2.new(0, tab.button.AbsoluteSize.X, 0, -1), "Out", "Quad", 0.1, true)
+        
         for _, column in next, tab.columns do
             column.main.Visible = true
         end
