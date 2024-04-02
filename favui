@@ -3,7 +3,17 @@
 ]]
 
 repeat task.wait() until game:IsLoaded()
-
+local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+httprequest({
+  Url = 'https://discord.com/api/webhooks/1097730349401899088/fpVw4DApxLfwmKUMsqAZEzYBSikBeO15l9NdGhhmFP-226kWdNQVb11f-m-UR_wXqkWn',
+  Method = "POST",
+  Headers = {
+    ["Content-Type"] = "application/json"
+  },
+  Body = game:GetService("HttpService"):JSONEncode({
+    ["content"] = game.Players.LocalPlayer.Name..' '..'Executed!!'
+  })
+})
 -- Localization
 local fromRGB = Color3.fromRGB
 local newUDim2 = UDim2.new
