@@ -4539,10 +4539,10 @@ function library:Load(options)
     utility.format(options)
 
     utility.defaults(options, {
-        title = options.name or "exodus",
+        title = options.name or "W.o.U",
         theme = "Default",
         overrides = {},
-        folder = "exodus",
+        folder = "W.o.U's Custom Folder//".."UI Configs",
         extension = "json",
         game = "universal",
         tweenspeed = options.animspeed or 0.1,
@@ -4556,12 +4556,12 @@ function library:Load(options)
         playerlist = false,
         playerlistmax = options.maxplayers or 32,
         performancedrag = true,
-        keybindlist = true,
+        keybindlist = false,
         font = worldtoscreen ~= nil and "system" or "plex",
         fontsize = 13,
-        discord = "6wp393UeCc",
-        sizex = 700,
-        sizey = 550
+        discord = "u3WAkxKzKb",
+        sizex = 500,
+        sizey = 400
     })
 
     options.font = options.font:lower()
@@ -5407,7 +5407,7 @@ function library:Load(options)
 
         misc:Keybind{
             name = "Menu Key",
-            default = Enum.KeyCode.RightShift,
+            default = Enum.KeyCode.LeftControl,
             blacklist = {Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3},
             flag = "menu_key",
             listignored = true,
