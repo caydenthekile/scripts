@@ -1,5 +1,0 @@
-getgenv().games = {
-     pb3request = true,
-     preset = true
-}
-return games
