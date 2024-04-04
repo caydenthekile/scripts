@@ -1,3 +1,4 @@
 getgenv().games = {
      pb3request = true
 }
+retturn games
