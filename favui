@@ -5526,7 +5526,7 @@ function library:Load(options)
     end
 
     utility.format(window_types, true)
-    return window_types
+    return window_types,window_types.misc
 end
 
 
