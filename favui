@@ -4215,7 +4215,7 @@ function library:Window(options)
 
     right_column:AddList(12);
 
-    local window_types = {Visible = options.visible, tab = holder, tab_buttons = {}, text_bounds = 0, double_columns = options.doublecolumns, left_column = left_column};
+    local window_types = {Visible = options.visible, tab = holder, tab_buttons = {}, text_bounds = 0, double_columns = options.doublecolumns, left_column = left_column,misc};
     self.windows[window] = window_types;
 
     --[[function window_types:SubTab(name)
@@ -5380,7 +5380,7 @@ function library:Load(options)
             end
         }
 
-        getgenv().misc = settings:Section{name = "Cheat", Side = "right"}
+       window_types.misc = settings:Section{name = "Cheat", Side = "right"}
 
         misc:Toggle{
             name = "Show Keybind List",
@@ -5526,7 +5526,7 @@ function library:Load(options)
     end
 
     utility.format(window_types, true)
-    return {window_types,misc}
+    return window_types
 end
 
 
