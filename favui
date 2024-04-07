@@ -5380,7 +5380,7 @@ function library:Load(options)
             end
         }
 
-        local misc = settings:Section{name = "Cheat", Side = "right"}
+        getgenv().misc = settings:Section{name = "Cheat", Side = "right"}
 
         misc:Toggle{
             name = "Show Keybind List",
