@@ -692,6 +692,7 @@ local inset = services.GuiService:GetGuiInset().Y
 local wait = task.wait
 
 local library = {
+    misc = nil,
     objects = {},
     text = {},
     notifications = {},
@@ -4215,7 +4216,7 @@ function library:Window(options)
 
     right_column:AddList(12);
 
-    local window_types = {Visible = options.visible, tab = holder, tab_buttons = {}, text_bounds = 0, double_columns = options.doublecolumns, left_column = left_column,misc};
+    local window_types = {Visible = options.visible, tab = holder, tab_buttons = {}, text_bounds = 0, double_columns = options.doublecolumns, left_column = left_column};
     self.windows[window] = window_types;
 
     --[[function window_types:SubTab(name)
@@ -5380,9 +5381,9 @@ function library:Load(options)
             end
         }
 
-       window_types.misc = settings:Section{name = "Cheat", Side = "right"}
+        library.misc = settings:Section{name = "Cheat", Side = "right"}
 
-        window_types.misc:Toggle{
+        library.misc:Toggle{
             name = "Show Keybind List",
             default = false,
             flag = "keybind_list",
@@ -5393,7 +5394,7 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Toggle{
+        library.misc:Toggle{
             name = "Show Player List",
             default = false,
             flag = "player_list",
@@ -5406,7 +5407,7 @@ function library:Load(options)
             end
         }
 
-        --[[misc:Toggle{
+        --[[library.misc:Toggle{
             name = "Performance Drag",
             default = library.performance_drag,
             flag = "performance_drag",
@@ -5415,7 +5416,7 @@ function library:Load(options)
             end
         }]]
 
-        window_types.misc:Keybind{
+        library.misc:Keybind{
             name = "Menu Key",
             default = Enum.KeyCode.LeftControl,
             blacklist = {Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3},
@@ -5428,7 +5429,7 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Keybind{
+        library.misc:Keybind{
             name = "Panic Key",
             default = Enum.KeyCode.End,
             blacklist = {Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3},
@@ -5443,7 +5444,7 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Slider{
+        library.misc:Slider{
             name = "Tween Speed",
             default = library.tween_speed,
             min = 0,
@@ -5454,7 +5455,7 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Slider{
+        library.misc:Slider{
             name = "Fade Speed",
             default = library.fade_speed,
             min = 0,
@@ -5465,7 +5466,7 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Dropdown{
+        library.misc:Dropdown{
             name = "Easing Style",
             default = tostring(library.easing_style):gsub("Enum.EasingStyle.", ""),
             content = {"Linear", "Sine", "Back", "Quad", "Quart", "Quint", "Bounce", "Elastic", "Exponential", "Circular", "Cubic"},
@@ -5475,28 +5476,28 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Button{
+        library.misc:Button{
             name = "Unload",
             callback = unload or function()
                 library:Unload();
             end
         }
 
-        window_types.misc:Button{
+        library.misc:Button{
             name = "Copy Game Invite (CONSOLE)",
             callback = function()
                 setclipboard(('Roblox.GameLauncher.joinGameInstance(%s, "%s")'):format(game.PlaceId, game.JobId))
             end
         }
 
-        window_types.misc:Button{
+        library.misc:Button{
             name = "Copy Game Invite (LUA)",
             callback = function()
                 setclipboard(('game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")'):format(game.PlaceId, game.JobId))
             end
         }
 
-        window_types.misc:Button{
+        library.misc:Button{
             name = "Join Discord Server",
             callback = function()
                 request{
@@ -5515,7 +5516,7 @@ function library:Load(options)
             end
         }
 
-        window_types.misc:Button{
+        library.misc:Button{
             name = "Copy Discord Invite",
             callback = function()
                 setclipboard(library.discord)
@@ -5526,7 +5527,7 @@ function library:Load(options)
     end
 
     utility.format(window_types, true)
-    return window_types,window_types.misc
+    return window_types
 end
 
 
