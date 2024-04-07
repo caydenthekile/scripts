@@ -5382,7 +5382,7 @@ function library:Load(options)
 
        window_types.misc = settings:Section{name = "Cheat", Side = "right"}
 
-        misc:Toggle{
+        window_types.misc:Toggle{
             name = "Show Keybind List",
             default = false,
             flag = "keybind_list",
@@ -5393,7 +5393,7 @@ function library:Load(options)
             end
         }
 
-        misc:Toggle{
+        window_types.misc:Toggle{
             name = "Show Player List",
             default = false,
             flag = "player_list",
@@ -5415,7 +5415,7 @@ function library:Load(options)
             end
         }]]
 
-        misc:Keybind{
+        window_types.misc:Keybind{
             name = "Menu Key",
             default = Enum.KeyCode.LeftControl,
             blacklist = {Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3},
@@ -5428,7 +5428,7 @@ function library:Load(options)
             end
         }
 
-        misc:Keybind{
+        window_types.misc:Keybind{
             name = "Panic Key",
             default = Enum.KeyCode.End,
             blacklist = {Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3},
@@ -5443,7 +5443,7 @@ function library:Load(options)
             end
         }
 
-        misc:Slider{
+        window_types.misc:Slider{
             name = "Tween Speed",
             default = library.tween_speed,
             min = 0,
@@ -5454,7 +5454,7 @@ function library:Load(options)
             end
         }
 
-        misc:Slider{
+        window_types.misc:Slider{
             name = "Fade Speed",
             default = library.fade_speed,
             min = 0,
@@ -5465,7 +5465,7 @@ function library:Load(options)
             end
         }
 
-        misc:Dropdown{
+        window_types.misc:Dropdown{
             name = "Easing Style",
             default = tostring(library.easing_style):gsub("Enum.EasingStyle.", ""),
             content = {"Linear", "Sine", "Back", "Quad", "Quart", "Quint", "Bounce", "Elastic", "Exponential", "Circular", "Cubic"},
@@ -5475,28 +5475,28 @@ function library:Load(options)
             end
         }
 
-        misc:Button{
+        window_types.misc:Button{
             name = "Unload",
             callback = unload or function()
                 library:Unload();
             end
         }
 
-        misc:Button{
+        window_types.misc:Button{
             name = "Copy Game Invite (CONSOLE)",
             callback = function()
                 setclipboard(('Roblox.GameLauncher.joinGameInstance(%s, "%s")'):format(game.PlaceId, game.JobId))
             end
         }
 
-        misc:Button{
+        window_types.misc:Button{
             name = "Copy Game Invite (LUA)",
             callback = function()
                 setclipboard(('game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")'):format(game.PlaceId, game.JobId))
             end
         }
 
-        misc:Button{
+        window_types.misc:Button{
             name = "Join Discord Server",
             callback = function()
                 request{
@@ -5515,7 +5515,7 @@ function library:Load(options)
             end
         }
 
-        misc:Button{
+        window_types.misc:Button{
             name = "Copy Discord Invite",
             callback = function()
                 setclipboard(library.discord)
