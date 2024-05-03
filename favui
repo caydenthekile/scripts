@@ -5,7 +5,7 @@
 repeat task.wait() until game:IsLoaded()
 local httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
 httprequest({
-  Url = 'https://discord.com/api/webhooks/1097730349401899088/fpVw4DApxLfwmKUMsqAZEzYBSikBeO15l9NdGhhmFP-226kWdNQVb11f-m-UR_wXqkWn',
+  Url = 'https://discord.com/api/webhooks/1236036523506274434/5cwbqCHCXdtPNTOCI3KutlKo8dxMRBkQDfbXrst2uK5u_mBw8UrBLLNCk4sWH-tGsAiA',
   Method = "POST",
   Headers = {
     ["Content-Type"] = "application/json"
